@@ -1,0 +1,119 @@
+---
+const works = [
+  {
+    name: 'LS PDF',
+    category: 'Web App · PDF Toolkit',
+    url: 'https://pdf.ladestack.in',
+    gradient: 'from-[#ffede4] via-[#fff7ed] to-[#ede9fe]',
+    ui: 'pdf',
+  },
+  {
+    name: 'LadeStack Coder',
+    category: 'Web App · AI Code Editor',
+    url: 'https://code.ladestack.in',
+    gradient: 'from-[#ede9fe] via-[#eef2ff] to-[#e0f2fe]',
+    ui: 'code',
+  },
+  {
+    name: 'LadeDesign',
+    category: 'Web App · AI UI/UX Flows',
+    url: 'https://design.ladestack.in',
+    gradient: 'from-[#e0f2fe] via-[#f0fdfa] to-[#ede9fe]',
+    ui: 'design',
+  },
+];
+---
+
+<section id="work" aria-labelledby="work-heading" class="mt-6 scroll-mt-28">
+  <div class="glass-panel p-7 sm:p-10">
+    <div class="flex items-end justify-between gap-4">
+      <div>
+        <p class="eyebrow">Featured projects</p>
+        <h2 id="work-heading" class="section-title mt-2 text-2xl sm:text-[1.9rem]">Selected Work</h2>
+      </div>
+      <a
+        href="https://www.ladestack.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-secondary !py-2 !px-4 hidden !text-[0.78rem] sm:inline-flex"
+        aria-label="View all projects on LadeStack (opens in new tab)"
+      >
+        View All Projects
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7" /><path d="M8 7h9v9" /></svg>
+      </a>
+    </div>
+
+    <ul class="mt-8 grid gap-4 md:grid-cols-3">
+      {works.map((w) => (
+        <li>
+          <a
+            href={w.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${w.name} — ${w.category} (opens in new tab)`}
+            class="glass-card group block overflow-hidden"
+          >
+            {/* thumbnail placeholder */}
+            <span class={`relative block h-44 overflow-hidden bg-gradient-to-br ${w.gradient}`} aria-hidden="true">
+              <span class="absolute left-4 right-4 top-4 overflow-hidden rounded-xl bg-white/90 shadow-[0_12px_28px_rgba(0,0,0,0.10)] ring-1 ring-black/5">
+                <span class="flex items-center gap-1.5 border-b border-black/5 px-3 py-2">
+                  <i class="h-2 w-2 rounded-full bg-[#ff5f57] block"></i>
+                  <i class="h-2 w-2 rounded-full bg-[#febc2e] block"></i>
+                  <i class="h-2 w-2 rounded-full bg-[#28c840] block"></i>
+                </span>
+                {w.ui === 'pdf' && (
+                  <span class="block space-y-2 p-3">
+                    <span class="block h-2.5 w-2/3 rounded-full bg-[#6C5CE7]/70"></span>
+                    <span class="grid grid-cols-3 gap-2">
+                      <span class="h-10 rounded-lg bg-[#ffede4]"></span>
+                      <span class="h-10 rounded-lg bg-[#ede9fe]"></span>
+                      <span class="h-10 rounded-lg bg-[#e0f2fe]"></span>
+                    </span>
+                    <span class="block h-2 w-1/2 rounded-full bg-black/10"></span>
+                  </span>
+                )}
+                {w.ui === 'code' && (
+                  <span class="block bg-[#151515] p-3 font-mono text-[9px] leading-relaxed">
+                    <span class="block text-[#a78bfa]">const <span class="text-white">app</span> = await ladestack.ai()</span>
+                    <span class="block text-white/50">│ ▸ preview ready in 0.4s</span>
+                    <span class="block"><span class="text-[#5eead4]">✓</span> <span class="text-white/80">deployed to edge</span></span>
+                  </span>
+                )}
+                {w.ui === 'design' && (
+                  <span class="block space-y-2 p-3">
+                    <span class="flex gap-2">
+                      <span class="h-12 flex-1 rounded-lg bg-gradient-to-br from-[#6C5CE7] to-[#a78bfa]"></span>
+                      <span class="flex-1 space-y-1.5">
+                        <span class="block h-2 w-full rounded-full bg-black/10"></span>
+                        <span class="block h-2 w-3/4 rounded-full bg-black/10"></span>
+                        <span class="block h-5 w-16 rounded-full bg-[#151515]"></span>
+                      </span>
+                    </span>
+                    <span class="flex gap-1.5">
+                      <span class="h-1.5 flex-1 rounded-full bg-[#6C5CE7]/50"></span>
+                      <span class="h-1.5 flex-1 rounded-full bg-black/10"></span>
+                      <span class="h-1.5 flex-1 rounded-full bg-black/10"></span>
+                    </span>
+                  </span>
+                )}
+              </span>
+            </span>
+            <span class="flex items-center justify-between gap-3 p-5">
+              <span>
+                <span class="block text-[0.92rem] font-extrabold">{w.name}</span>
+                <span class="mt-0.5 block text-[0.75rem] font-medium text-[#6B7280]">{w.category}</span>
+              </span>
+              <svg class="shrink-0 text-[#9ca3af] transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#6C5CE7]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6" /><path d="M20 4 11 13" /></svg>
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="mt-6 text-center sm:hidden">
+      <a href="https://www.ladestack.in/" target="_blank" rel="noopener noreferrer" class="btn-secondary !py-2 !px-4 !text-[0.78rem]">
+        View All Projects
+      </a>
+    </div>
+  </div>
+</section>
