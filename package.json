@@ -1,0 +1,23 @@
+{
+  "name": "girish-lade-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Girish Lade — Mechanical Engineer to Software Engineer portfolio (Astro 5, Tailwind, SSG)",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "astro": "^5.13.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.12",
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.12",
+    "typescript": "^5.9.2"
+  }
+}
