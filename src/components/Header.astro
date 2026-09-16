@@ -1,0 +1,111 @@
+---
+// Sticky glass header — vanilla JS for scroll state + mobile drawer (no framework island needed)
+---
+
+<header id="site-header" class="sticky top-3 sm:top-5 z-50 transition-all duration-300">
+  <nav
+    aria-label="Primary navigation"
+    class="glass mx-auto flex items-center justify-between gap-3 rounded-full py-2.5 pl-4 pr-2.5 sm:pl-5"
+    id="nav-pill"
+  >
+    <!-- Logo -->
+    <a href="#home" class="flex items-center gap-2.5" aria-label="Girish Lade — home">
+      <span
+        class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-[#151515] text-white"
+        aria-hidden="true"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V7l8 6 8-6v10" /><circle cx="19" cy="5" r="1.6" fill="#8b7cf6" stroke="none" /></svg>
+      </span>
+      <span class="leading-tight">
+        <span class="block text-[0.95rem] font-extrabold tracking-tight">Girish Lade</span>
+        <span class="block text-[0.65rem] font-medium text-[#6B7280]">Founder, LadeStack</span>
+      </span>
+    </a>
+
+    <!-- Center links (desktop) -->
+    <ul class="hidden lg:flex items-center gap-1 text-[0.82rem] font-semibold text-[#4b5563]">
+      <li><a href="#home" aria-current="page" class="rounded-full bg-white px-4 py-2 shadow-sm ring-1 ring-black/5 text-[#151515]">Home</a></li>
+      <li><a href="#about" class="rounded-full px-4 py-2 hover:bg-white/70 hover:text-[#151515] transition">About</a></li>
+      <li><a href="#services" class="rounded-full px-4 py-2 hover:bg-white/70 hover:text-[#151515] transition">Services</a></li>
+      <li><a href="#work" class="rounded-full px-4 py-2 hover:bg-white/70 hover:text-[#151515] transition">Work</a></li>
+      <li><a href="#process" class="rounded-full px-4 py-2 hover:bg-white/70 hover:text-[#151515] transition">Process</a></li>
+      <li><a href="#testimonials" class="rounded-full px-4 py-2 hover:bg-white/70 hover:text-[#151515] transition">Testimonials</a></li>
+      <li><a href="#contact" class="rounded-full px-4 py-2 hover:bg-white/70 hover:text-[#151515] transition">Contact</a></li>
+    </ul>
+
+    <!-- Right CTA + hamburger -->
+    <div class="flex items-center gap-2">
+      <a
+        href="#contact"
+        class="btn-primary !py-2.5 !px-5 hidden sm:inline-flex"
+      >
+        Let's Talk
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7" /><path d="M8 7h9v9" /></svg>
+      </a>
+      <button
+        id="nav-toggle"
+        type="button"
+        class="lg:hidden grid h-10 w-10 place-items-center rounded-full bg-white/80 ring-1 ring-black/5"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-drawer"
+      >
+        <svg id="icon-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16" /><path d="M4 12h16" /><path d="M4 17h16" /></svg>
+        <svg id="icon-close" class="hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12" /><path d="M18 6 6 18" /></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div
+    id="mobile-drawer"
+    class="glass mt-2 hidden rounded-3xl p-3 lg:hidden"
+  >
+    <ul class="grid gap-1 text-[0.95rem] font-semibold text-[#374151]">
+      <li><a href="#home" class="mobile-link block rounded-2xl px-4 py-3 hover:bg-white">Home</a></li>
+      <li><a href="#about" class="mobile-link block rounded-2xl px-4 py-3 hover:bg-white">About</a></li>
+      <li><a href="#services" class="mobile-link block rounded-2xl px-4 py-3 hover:bg-white">Services</a></li>
+      <li><a href="#work" class="mobile-link block rounded-2xl px-4 py-3 hover:bg-white">Work</a></li>
+      <li><a href="#process" class="mobile-link block rounded-2xl px-4 py-3 hover:bg-white">Process</a></li>
+      <li><a href="#testimonials" class="mobile-link block rounded-2xl px-4 py-3 hover:bg-white">Testimonials</a></li>
+      <li><a href="#contact" class="mobile-link block rounded-2xl px-4 py-3 hover:bg-white">Contact</a></li>
+      <li class="pt-1"><a href="#contact" class="mobile-link btn-primary w-full justify-center">Let's Talk</a></li>
+    </ul>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    var pill = document.getElementById('nav-pill');
+    var toggle = document.getElementById('nav-toggle');
+    var drawer = document.getElementById('mobile-drawer');
+    var iconOpen = document.getElementById('icon-open');
+    var iconClose = document.getElementById('icon-close');
+
+    function onScroll() {
+      if (window.scrollY > 24) {
+        pill?.classList.add('shadow-[0_20px_40px_rgba(0,0,0,0.10)]');
+        pill?.style.setProperty('background', 'rgba(255,255,255,0.82)');
+      } else {
+        pill?.classList.remove('shadow-[0_20px_40px_rgba(0,0,0,0.10)]');
+        pill?.style.removeProperty('background');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    function setOpen(open) {
+      drawer?.classList.toggle('hidden', !open);
+      iconOpen?.classList.toggle('hidden', open);
+      iconClose?.classList.toggle('hidden', !open);
+      toggle?.setAttribute('aria-expanded', String(open));
+      toggle?.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    toggle?.addEventListener('click', function () {
+      setOpen(drawer?.classList.contains('hidden'));
+    });
+    drawer?.querySelectorAll('.mobile-link').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+  })();
+</script>
