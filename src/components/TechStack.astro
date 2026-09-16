@@ -1,0 +1,37 @@
+---
+const stack = [
+  { name: 'React', tint: 'bg-[#e0f2fe] text-[#0284c7]', glyph: 'Re' },
+  { name: 'Astro', tint: 'bg-[#ede9fe] text-[#6C5CE7]', glyph: 'As' },
+  { name: 'Vite', tint: 'bg-[#fef3c7] text-[#d97706]', glyph: 'Vi' },
+  { name: 'Tailwind CSS', tint: 'bg-[#cffafe] text-[#0e7490]', glyph: 'Tw' },
+  { name: 'TypeScript', tint: 'bg-[#dbeafe] text-[#1d4ed8]', glyph: 'TS' },
+  { name: 'Monaco Editor', tint: 'bg-[#e5e7eb] text-[#374151]', glyph: 'Me' },
+  { name: 'Supabase', tint: 'bg-[#dcfce7] text-[#15803d]', glyph: 'Su' },
+  { name: 'Cloudflare R2', tint: 'bg-[#ffedd5] text-[#c2410c]', glyph: 'R2' },
+  { name: 'DigitalOcean', tint: 'bg-[#dbeafe] text-[#0369a1]', glyph: 'DO' },
+  { name: 'n8n', tint: 'bg-[#fce7f3] text-[#be185d]', glyph: 'n8' },
+  { name: 'NVIDIA NIM', tint: 'bg-[#dcfce7] text-[#166534]', glyph: 'NV' },
+  { name: 'Tiptap', tint: 'bg-[#ede9fe] text-[#5b21b6]', glyph: 'Tt' },
+  { name: 'Upstash Redis', tint: 'bg-[#fee2e2] text-[#b91c1c]', glyph: 'Ur' },
+  { name: 'Mermaid.js', tint: 'bg-[#e0e7ff] text-[#4338ca]', glyph: 'Mm' },
+];
+---
+
+<section id="stack" aria-labelledby="stack-heading" class="mt-6 scroll-mt-28">
+  <div class="glass-panel p-7 sm:p-10">
+    <p class="eyebrow">Tools &amp; skills</p>
+    <h2 id="stack-heading" class="section-title mt-2 text-2xl sm:text-[1.9rem]">Technologies I Use</h2>
+    <ul aria-label="Technology stack" class="mt-8 flex flex-wrap gap-3">
+      {stack.map((t) => (
+        <li
+          class="glass-card !rounded-2xl flex items-center gap-2.5 px-4 py-2.5"
+        >
+          <span class={`grid h-7 w-7 place-items-center rounded-lg text-[0.65rem] font-extrabold ${t.tint}`} aria-hidden="true">
+            {t.glyph}
+          </span>
+          <span class="text-[0.82rem] font-bold text-[#374151]">{t.name}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
