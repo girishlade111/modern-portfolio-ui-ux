@@ -1,0 +1,85 @@
+---
+const products = [
+  {
+    name: 'LS PDF',
+    url: 'https://pdf.ladestack.in',
+    desc: 'Client-side PDF toolkit, iLovePDF alternative',
+    iconBg: 'bg-[#ffede4] text-[#e0653a]',
+    icon: '<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h6"/>',
+  },
+  {
+    name: 'LadeStack Coder',
+    url: 'https://code.ladestack.in',
+    desc: 'AI code editor with live preview & share',
+    iconBg: 'bg-[#ede9fe] text-[#6C5CE7]',
+    icon: '<path d="M8 9l-4 3 4 3"/><path d="M16 9l4 3-4 3"/><path d="M13 5l-2 14"/>',
+  },
+  {
+    name: 'LadeDesign',
+    url: 'https://design.ladestack.in',
+    desc: 'AI UI/UX flow generator',
+    iconBg: 'bg-[#e0f2fe] text-[#0284c7]',
+    icon: '<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/><circle cx="6" cy="6.5" r="0.6"/>',
+  },
+  {
+    name: 'LS Docs',
+    url: 'https://www.ladestack.in/',
+    desc: 'AI-powered docs & spreadsheet editor',
+    iconBg: 'bg-[#dcfce7] text-[#16a34a]',
+    icon: '<path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7M9 8h3"/>',
+  },
+  {
+    name: 'LadeStack Notes',
+    url: 'https://www.ladestack.in/',
+    desc: 'NotebookLM-style RAG notes & study tools',
+    iconBg: 'bg-[#fef3c7] text-[#d97706]',
+    icon: '<path d="M5 4h14v12H9l-4 4z"/><path d="M9 9h6M9 12h4"/>',
+  },
+];
+---
+
+<section id="services" aria-labelledby="services-heading" class="mt-6 scroll-mt-28">
+  <div class="glass-panel p-7 sm:p-10">
+    <p class="eyebrow">What I build</p>
+    <h2 id="services-heading" class="section-title mt-2 text-2xl sm:text-[1.9rem]">LadeStack Product Suite</h2>
+
+    <ul class="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+      {products.map((p) => (
+        <li>
+          <a
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${p.name} — ${p.desc} (opens in new tab)`}
+            class="glass-card group flex h-full flex-col p-6"
+          >
+            <span class={`grid h-11 w-11 place-items-center rounded-2xl ${p.iconBg}`} aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={p.icon} />
+            </span>
+            <span class="mt-4 block text-[0.95rem] font-extrabold">{p.name}</span>
+            <span class="mt-1.5 block flex-1 text-[0.82rem] leading-relaxed text-[#6B7280]">{p.desc}</span>
+            <span class="mt-5 flex justify-end" aria-hidden="true">
+              <svg class="text-[#9ca3af] transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#6C5CE7]" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7" /><path d="M8 7h9v9" /></svg>
+            </span>
+          </a>
+        </li>
+      ))}
+      <li>
+        <a
+          href="https://www.ladestack.in/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Explore the full LadeStack ecosystem (opens in new tab)"
+          class="group flex h-full min-h-[190px] flex-col justify-between rounded-[20px] bg-[#151515] p-6 text-white transition hover:-translate-y-1"
+        >
+          <span class="text-[0.95rem] font-extrabold">Explore the ecosystem →</span>
+          <span class="text-[0.82rem] leading-relaxed text-white/60">One account. Every tool. Zero cost.</span>
+          <span class="mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-[0.78rem] font-bold ring-1 ring-white/15">
+            ladestack.in
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6" /><path d="M20 4 11 13" /></svg>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
