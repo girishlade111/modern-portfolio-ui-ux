@@ -1,0 +1,31 @@
+---
+const steps = [
+  { n: '01', title: 'Discover', desc: 'Understand users, goals, and constraints fast.', icon: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>' },
+  { n: '02', title: 'Define', desc: 'Frame the problem and shape the scope.', icon: '<path d="M4 6h16M4 12h16M4 18h10"/>' },
+  { n: '03', title: 'Design', desc: 'Prototype flows and UI in tight loops.', icon: '<path d="M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5z"/>' },
+  { n: '04', title: 'Build', desc: 'Ship clean, tested, performant code.', icon: '<path d="M8 9l-4 3 4 3"/><path d="M16 9l4 3-4 3"/><path d="M13 5l-2 14"/>' },
+  { n: '05', title: 'Ship & Iterate', desc: 'Launch, measure, and keep improving.', icon: '<path d="M5 12h14"/><path d="M13 6l6 6-6 6"/>' },
+];
+---
+
+<section id="process" aria-labelledby="process-heading" class="mt-6 scroll-mt-28">
+  <div class="glass-panel p-7 sm:p-10">
+    <p class="eyebrow">My process</p>
+    <h2 id="process-heading" class="section-title mt-2 text-2xl sm:text-[1.9rem]">How I Build</h2>
+
+    <ol class="relative mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+      {steps.map((s) => (
+        <li class="glass-card relative p-5">
+          <span class="flex items-center justify-between" aria-hidden="true">
+            <span class="grid h-9 w-9 place-items-center rounded-xl bg-[#ede9fe] text-[#6C5CE7]">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" set:html={s.icon} />
+            </span>
+            <span class="text-[0.72rem] font-extrabold tracking-widest text-[#c4b5fd]">{s.n}</span>
+          </span>
+          <h3 class="mt-4 text-[0.9rem] font-extrabold">{s.title}</h3>
+          <p class="mt-1 text-[0.78rem] leading-relaxed text-[#6B7280]">{s.desc}</p>
+        </li>
+      ))}
+    </ol>
+  </div>
+</section>
