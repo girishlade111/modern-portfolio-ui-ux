@@ -1,67 +1,62 @@
-# ✨ Modern Portfolio UI/UX Design & Templates
+# Modern Portfolio UI/UX — Design & Templates
 
-A curated collection of modern, sleek, and high-impact UI/UX inspiration and design assets for web portfolios and personal branding websites.
+A fast, static personal portfolio built with **Astro 5** and **Tailwind CSS 4** — plus a
+curated collection of modern, sleek, high-impact UI/UX design assets for portfolios and
+personal branding websites.
 
 ![Preview](./Web%20Design%20Templates_%20Modern%20Portfolio%20UI_UX%20Inspiration.jpg)
 
----
+## Features
 
-## 🌟 Overview
+- **Astro 5 portfolio site** — static SSG, instant loads, great SEO
+- **Responsive layouts** — mobile, tablet, and widescreen
+- **Modern aesthetics** — dark/light contrast, neo-brutalism & glassmorphism accents
+- **Hero assets included** — transparent cutout (`hero-nobg.png`) ready for custom
+  background gradients, canvas animations, and 3D effects
+- **Type-safe** — TypeScript strict config, `astro check` ready
 
-This repository provides design references, templates, and high-resolution assets crafted for developers, designers, and creators who want to build standout portfolio websites.
+## Tech stack
 
-### Key Highlights
-- 🎨 **Modern Aesthetics**: Sleek dark/light contrast, neo-brutalism & glassmorphism accents.
-- 🖼️ **Transparent Cutouts & Hero Assets**: Includes isolated foreground imagery (like `hero-nobg.png`) ready for custom background gradients, canvas animations, and 3D effects.
-- 📱 **Responsive & Adaptive Layout Ideas**: Tailored for mobile, tablet, and widescreen display experiences.
-- ⚡ **Developer & Designer Friendly**: Seamlessly integrate with React, Next.js, Vue, Tailwind CSS, or Vanilla HTML/CSS.
+| Layer     | Tech                                  |
+|-----------|---------------------------------------|
+| Framework | Astro 5 (static output)               |
+| Styling   | Tailwind CSS 4 (`@tailwindcss/vite`)  |
+| Images    | Sharp (Astro image optimization)      |
+| Language  | TypeScript                            |
 
----
+## Quick start
 
-## 📁 Repository Structure
+```bash
+npm install
+npm run dev      # local dev server
+npm run build    # static build -> dist/
+npm run preview  # preview the production build
+```
+
+## Project structure
 
 ```plaintext
 .
-├── .gitignore                                                 # Standard git ignore rules (node_modules, build artifacts, etc.)
-├── README.md                                                  # Project documentation & guidelines
-├── hero-nobg.png                                              # High-res cutout hero character / subject asset
-└── Web Design Templates_ Modern Portfolio UI_UX Inspiration.jpg # Full design concept preview
+├── src/                     # Astro components, pages, styles
+├── public/                  # Static assets copied to dist/
+├── astro.config.mjs         # Static output; site = https://www.ladestack.in
+├── hero-nobg.png            # High-res transparent hero cutout asset
+└── Web Design Templates_ Modern Portfolio UI_UX Inspiration.jpg
+     # Full design concept preview
 ```
 
----
+## Using the assets
 
-## 🚀 Getting Started
+- **Hero Image (`hero-nobg.png`)**: main subject for a portfolio hero section — works well
+  with CSS background glow effects, parallax scrolling, or Three.js backgrounds.
+- **Design template JPG**: visual inspiration for section layout, typography pairing,
+  call-to-actions, and card structures.
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/girishlade111/modern-portfolio-ui-ux.git
-cd modern-portfolio-ui-ux
-```
+## Deploy notes
 
-### 2. Using the Assets
-- **Hero Image (`hero-nobg.png`)**: Use as the main subject in your portfolio's hero section. Works well with CSS background glow effects, parallax scrolling, or Three.js backgrounds.
-- **Design Template (`Web Design Templates_ Modern Portfolio UI_UX Inspiration.jpg`)**: Use as visual inspiration for section layout, typography pairing, call-to-actions, and card structures.
+Static build — deploy the `dist/` folder to any static host (Cloudflare Pages,
+GitHub Pages, Netlify). No environment variables required.
 
 ---
 
-## 🛠️ Recommended Tech Stack for Implementation
-
-| Category | Recommended Technologies |
-| :--- | :--- |
-| **Frameworks** | [Next.js](https://nextjs.org/), [Vite + React](https://vitejs.dev/), [Astro](https://astro.build/) |
-| **Styling** | [Tailwind CSS](https://tailwindcss.com/), Vanilla CSS Modules, Styled Components |
-| **Animations** | [Framer Motion](https://www.framer.com/motion/), [GSAP](https://greensock.com/gsap/), Lucide Icons |
-| **Deployment** | [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), [GitHub Pages](https://pages.github.com/) |
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-Feel free to check out the [issues page](https://github.com/girishlade111/modern-portfolio-ui-ux/issues).
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE) - feel free to use these assets and templates for personal and commercial projects.
+Built by [Girish Lade](https://ladestack.in) · https://ladestack.in
