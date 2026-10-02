@@ -59,4 +59,4 @@ GitHub Pages, Netlify). No environment variables required.
 
 ---
 
-Built by [Girish Lade](https://ladestack.in) · https://ladestack.in
+Built by Girish Lade · [ladestack.in](https://ladestack.in)
